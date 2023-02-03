@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Encriptador</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="encriptador.css">
+    </head>
+    <body>
+        <main>
+            <div class="logo">
+                <h1><img src="Vector.png"></h1>
+            </div>
+
+            <div>
+                <input id="ingresarTexto" type="text" placeholder="Ingrese el texto aqui">
+            </div>
+
+            <div class="frame1">
+                <p class="recomendaciones"> Solo letras minúsculas y sin acentos</p>
+            </div>
+
+            <div class="rectangulo">
+                <div id="contenidoRectangulo">
+                    <img class="muñeco" src="Muñeco.png">
+                    <p class="mensaje1">Ningún mensaje fue encontrado</p>
+                    <p class="mensaje2">Ingresa el texto que deseas encriptar o desencriptar</p>
+                    <p></p>
+                </div>
+                                   
+            </div>
+                  
+                        
+            <div class="botones">
+                <div class="botonEncriptar">
+                    <!--<input type="submit"  value="Encriptar" class="textoboton1">-->
+                    <button onclick="encriptar()" id="textoboton1">Encriptar</button>
+                </div>
+
+                <div class="botonDesencriptar">
+                    <!--<input type="submit"  value="Desencriptar" class="textoboton2">-->
+                    <button onclick="desencriptar()" id="textoboton2">Desencriptar</button>
+
+                </div>
+            </div>       
+        </main>
+
+        <footer>
+            <p class="desarrollador"> Creado por Manuel Martínez</p>
+        </footer>
+
+        
+    </body>
+    <script>
+        var textoIngresado = null;
+
+        function encriptar(){
+            document.getElementById("contenidoRectangulo").style.display = "none";
+            textoIngresado=document.getElementById("ingresarTexto").value;
+                listaTextoIngresado = Array.from (textoIngresado.toLowerCase());
+                    for (var i of listaTextoIngresado){
+                        if (i == "a"){
+                            var indice = listaTextoIngresado.indexOf("a");
+                                listaTextoIngresado[indice] = "ai";
+                        } 
+                        if (i == "e"){ 
+                                 indice = listaTextoIngresado.indexOf("e");
+                                    listaTextoIngresado[indice] = "enter";
+                        } 
+                        if (i == "i"){ 
+                                 indice = listaTextoIngresado.indexOf("i");
+                                    listaTextoIngresado[indice] = "imes";
+                        } 
+                        if (i == "o"){ 
+                                 indice = listaTextoIngresado.indexOf("o");
+                                    listaTextoIngresado[indice] = "ober";
+                        } 
+                        if (i == "u"){ 
+                                 indice = listaTextoIngresado.indexOf("u");
+                                    listaTextoIngresado[indice] = "ufat";
+                        }
+                    }
+                var textoEncriptado = listaTextoIngresado.join("");
+                alert(textoEncriptado);
+        }
+
+        var textoFinal = null;
+
+        function desencriptar(){
+            document.getElementById("contenidoRectangulo").style.display = "none";
+            textoIngresado=document.getElementById("ingresarTexto").value;
+                listaTextoIngresado = Array.from (textoIngresado.toLowerCase());
+                for (var i of listaTextoIngresado){
+                    if (i == "a" ){
+                        if (i == "i")
+                            var textoDesncriptado = textoFinal.push ("a");
+                        
+                    }    
+                    
+                    if (i == "e" ){
+                        if (i == "n")
+                            if ( i == "t"){
+                                if (i == "e"){
+                                    if (i == "r"){
+                                        textoDesncriptado = textoFinal.push ("a");
+
+                                    }
+                                }
+                            }
+                        
+                    }    
+                    
+
+                        /*var indice = listaTextoIngresado.indexOf("a");
+                            listaTextoIngresado.splice(indice+1,1)
+                    }
+                    if (i == "e" && "n" && "t" && "e" && "r"){
+                        /*var indice = listaTextoIngresado.indexOf("e");
+                            listaTextoIngresado.splice(indice+1,4)
+                    }
+                    if (i == "i" && "m" && "e" && "s"){
+                        /*var indice = listaTextoIngresado.indexOf("i");
+                            listaTextoIngresado.splice(indice+1,3)
+                    }
+                    if (i == "o" && "b" && "e" && "r"){
+                        /*var indice = listaTextoIngresado.indexOf("o");
+                            listaTextoIngresado.splice(indice+1,3)
+                    }
+                    if (i == "u" && "f" && "a" && "t"){
+                        /*var indice = listaTextoIngresado.indexOf("u");
+                            listaTextoIngresado.splice(indice+1,3)
+                    }*/
+                }
+                textoDesncriptado = textoFinal.join("");
+                alert(textoDesncriptado);
+
+        }
+
+        /*function enviarTexto(){
+            document.getElementById("contenidoRectangulo").style.display = "none";
+        }*/
+
+        
+            
+
+
+        
+
+            /*var textoTransformar = []
+
+            function encriptar(){
+                textoIngresado=document.getElementsByClassName("ingresarTexto") [0].value;
+                    console.log(textoIngresado);
+                /*for (textoIngresado=""; textoIngresado.length; textoIngresado++){
+                    var textoSeparado=textoTransformar.push(textoIngresado)
+                }
+                return*/
+
+            
+
+         
+
+        </script>
+</html>
